@@ -22,7 +22,9 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }));
-
+app.get('/', (req, res) => {
+    res.render('index');
+});
 app.use('/', authRoutes);
 app.use('/courses', courseRoutes);
 
